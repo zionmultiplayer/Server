@@ -271,6 +271,8 @@ void Server::Start(uint16_t maxPlayers, uint16_t port, const char *hostname) {
     rakServer->RegisterAsRemoteProcedureCall(SAMP::RPC::DAMAGE_VEHICLE, RPC::DamageVehicle);
     rakServer->RegisterAsRemoteProcedureCall(SAMP::RPC::UPDATE_SCORES_PINGS_IPS, RPC::UpdateScoreAndPings);
     rakServer->RegisterAsRemoteProcedureCall(SAMP::RPC::SET_INTERIOR_ID, RPC::SetInterior);
+    rakServer->RegisterAsRemoteProcedureCall(SAMP::RPC::PICKED_UP_PICKUP, RPC::PickedUpPickup);
+    rakServer->RegisterAsRemoteProcedureCall(SAMP::RPC::CLICK_TEXT_DRAW, RPC::ClickTextDraw);
     rakServer->Start(maxPlayers, 0, 5, port, hostname);
 
     gameMode->OnGameModeInit();

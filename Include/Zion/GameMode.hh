@@ -4,6 +4,7 @@
 #include "Vehicle.hh"
 #include "Util.hh"
 #include "TextDraw.hh"
+#include "Pickup.hh"
 
 namespace Zion {
     class GameMode {
@@ -31,5 +32,6 @@ namespace Zion {
             virtual void OnGameModeInit() {}
             virtual void OnGameModeExit() {}
             virtual void OnPlayerClickTextDraw(Player *player, TextDraw *textDraw) {}
+            virtual void OnPlayerPickUpPickup(Player *player, Pickup *pickup) {}
     };
 };

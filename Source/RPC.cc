@@ -244,5 +244,27 @@ void RPC::DamageVehicle(RPCParameters *params) {
 }
 
 void RPC::ClickTextDraw(RPCParameters *params) {
-    Server::gameMode->OnPlayerCli
+    uint16_t textDrawId = *(uint16_t *)params->input;
+
+    if(textDrawId < Server::textDraws.GetLength()) {
+        TextDraw *textDraw = Server::textDraws[textDrawId];
+
+        if(textDraw != nullptr) {
+            Server::gameMode->OnPlayerClickTextDraw(
+                Server::players[params->senderIndex], textDraw);
+        }
+    }
+}
+
+void RPC::PickedUpPickup(RPCParameters *params) {
+    int32_t pickupId = *(int32_t *)params->input;
+
+    if(pickupId < Server::pickups.GetLength()) {
+        Pickup *pickup = Server::pickups[pickupId];
+
+        if(pickup != nullptr) {
+            Server::gameMode->OnPlayerPickUpPickup(
+                Server::players[params->senderIndex], pickup);
+        }
+    }
 }

@@ -21,5 +21,6 @@ namespace Zion {
             static void ExitVehicle(RPCParameters *params);
             static void DamageVehicle(RPCParameters *params);
             static void ClickTextDraw(RPCParameters *params);
+            static void PickedUpPickup(RPCParameters *params);
     };
 };
