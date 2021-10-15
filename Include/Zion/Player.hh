@@ -129,12 +129,14 @@ namespace Zion {
             uint8_t GetWeapon();
             void Ban();
             void Ban(const char *reason);
+            void ChatBubble(const char *text, uint32_t color, float drawDistance, uint32_t expireTime);
 
             inline uint16_t GetIndex() {
                 return this->index;
             }
 
             int32_t score;
+            void *data;
             
         private:
             PACK(struct OnFootInfo {

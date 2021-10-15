@@ -996,3 +996,19 @@ void Player::Ban(const char *reason) {
     this->SendClientMessage(0xFFFFFFFF, "[banned] reason: %s", reason);
     this->Ban();
 }
+
+void Player::ChatBubble(const char *text, uint32_t color, float drawDistance, uint32_t expireTime) {
+    size_t length = strlen(text);
+    if(length >= 255)
+        throw PlayerException("length >= 255");
+
+    RakNet::BitStream bitStream;
+    bitStream.Write<uint16_t>(this->index);
+    bitStream.Write<uint32_t>(color);
+    bitStream.Write<float>(drawDistance);
+    bitStream.Write<uint32_t>(expireTime);
+    bitStream.Write<uint8_t>((uint8_t)length);
+    bitStream.Write(text, length);
+
+    Server::RPC(SAMP::RPC::CHAT_BUBBLE, &bitStream, this->rakId, true);
+}

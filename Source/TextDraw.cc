@@ -66,7 +66,7 @@ void TextDraw::SetLetterSize(float width, float height) {
     this->tdt.letterHeight = height;
 }
 
-void TextDraw::SetLineSize(float width, float height) {
+void TextDraw::SetTextSize(float width, float height) {
     this->tdt.lineWidth = width;
     this->tdt.lineHeight = height;
 }

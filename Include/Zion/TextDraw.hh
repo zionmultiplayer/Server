@@ -36,12 +36,12 @@ namespace Zion {
 
     class TextDraw {
         public:
-            TextDraw(Vector2 position, const char *text);
+            TextDraw(Vector2 position, const char *text = "");
             ~TextDraw();
 
             void SetPosition(Vector2 position);
             void SetLetterSize(float width, float height);
-            void SetLineSize(float width, float height);
+            void SetTextSize(float width, float height);
             void SetAlignment(int alignment);
             void SetLetterColor(uint32_t color);
             void UseBox(bool use);

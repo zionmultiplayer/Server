@@ -257,7 +257,7 @@ void RPC::ClickTextDraw(RPCParameters *params) {
 }
 
 void RPC::PickedUpPickup(RPCParameters *params) {
-    int32_t pickupId = *(int32_t *)params->input;
+    uint32_t pickupId = *(uint32_t *)params->input;
 
     if(pickupId < Server::pickups.GetLength()) {
         Pickup *pickup = Server::pickups[pickupId];

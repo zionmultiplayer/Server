@@ -28,6 +28,7 @@ namespace Zion {
         friend class TextDraw;
         friend class Pickup;
         friend class GangZone;
+        friend class TextLabel3D;
 
         public:
             static void Start(uint16_t maxPlayers, uint16_t port = 7777, const char *hostname = nullptr);

@@ -355,6 +355,7 @@ void Server::SetServerName(const char *name) {
     if(Server::name != nullptr)
         delete[] Server::name;
 
+    Server::nameLength = nameLength;
     Server::name = new char[nameLength + 1];
     strcpy(Server::name, name);
 }

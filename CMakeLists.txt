@@ -12,4 +12,10 @@ target_include_directories(zion PUBLIC ${PROJECT_SOURCE_DIR}/Include)
 if(BUILD_TESTS)
     add_executable(bare ${PROJECT_SOURCE_DIR}/Tests/Bare/Bare.cc)
     target_link_libraries(bare PRIVATE zion)
+
+    add_executable(chatbubble ${PROJECT_SOURCE_DIR}/Tests/ChatBubble/ChatBubble.cc)
+    target_link_libraries(chatbubble PRIVATE zion)
+
+    add_executable(progressbar ${PROJECT_SOURCE_DIR}/Tests/ProgressBar/ProgressBar.cc)
+    target_link_libraries(progressbar PRIVATE zion)
 endif()
